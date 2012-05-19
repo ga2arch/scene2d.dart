@@ -1,5 +1,9 @@
 class MyRectangle extends Rectangle {
 
+  bool jumping = false;
+  num jumpVel = 14;
+  num gravity = 4;
+  
   MyRectangle(num x, num y, num width, num height) 
              : super(x, y, width, height);
   

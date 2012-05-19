@@ -1,10 +1,5 @@
 class Rectangle extends Actor {
  
-  bool jumping = false;
-  num jumpVel = 14;
-  num gravity = 4;
-  num keyDown = 0;
-  
   Rectangle(num x, num y, num width, num height) : super('rectangle') {
     this.x = x;
     this.y = y;
