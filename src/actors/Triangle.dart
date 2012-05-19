@@ -7,13 +7,7 @@ class Triangle extends Actor {
     this.height = height;
   }
   
-  void act(num delta) {    
-    if (Input.isKeyPressed(Keys.SPACE))
-      degree -= 20 * delta;
-    
-    x = Input.mouseX - width/2;
-    y = Input.mouseY - height/2;
-    
+  void act(num delta) {
   }
   
   void draw(CanvasRenderingContext2D ctx) {

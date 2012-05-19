@@ -1,3 +1,4 @@
+
 abstract class Actor {
   
   num x, y, width, height, degree;
