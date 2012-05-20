@@ -1,8 +1,10 @@
 class Player extends Rectangle {
 
-  bool jumping = false;
-  num jumpVel = 13;
+  num MAX_JUMP_VELOCITY = 13;
   num gravity = 1;
+  
+  bool jumping = false;
+  num  jumpVel = 13;
   
   Player(num x, num y) : super(x, y, 25, 25);
   
@@ -12,15 +14,26 @@ class Player extends Rectangle {
     if (Input.isKeyPressed(Keys.LEFT))
       x -= 100 * delta;
     if (Input.isKeyPressed(Keys.SPACE))
-      jumping = true;
+      if (!jumping) jumping = true;
     
     if (jumping) {
       y -= jumpVel;
       jumpVel -= gravity;
-      if (jumpVel < -13) {
-        jumping = false;
-        jumpVel = 13;
-      }
     }
+  }
+  
+  void draw(ctx) {
+    super.draw(ctx);
+    ctx.strokeStyle = 'black';
+    ctx.stroke();
+  }
+  
+  void stopJump() {
+    jumping = false;
+    jumpVel = MAX_JUMP_VELOCITY;
+  }
+  
+  void fall(num delta) {
+    y += 400 * delta;
   }
 }

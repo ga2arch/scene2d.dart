@@ -23,8 +23,8 @@ class Stage {
     root.draw(ctx);
   }
   
-  Actor hit(Actor actor) {
-    return root.hit(actor);
+  List<Actor> hits(Actor actor) {
+    return root.hits(actor);
   }
   
   void addActor(Actor actor) {
