@@ -8,12 +8,19 @@ abstract class Actor {
   
   Actor(this.name) : degree = 0;
   
-  abstract void act(num delta);
+  void act(num delta) {
+    
+  }
+  
   void draw(CanvasRenderingContext2D ctx) {
     ctx.translate(x+width/2, y+height/2);
     ctx.rotate(degree * (Math.PI / 180));
   }
-
+  
+  Actor hit(Actor actor) {
+    return null;
+  }
+  
   bool isMarkedToRemove() {
     toRemove;
   }

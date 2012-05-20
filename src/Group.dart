@@ -43,11 +43,12 @@ class Group extends Actor {
     if (actor.name != null) namesToActor.remove(actor.name);
   }  
   
-  Actor hit(num x, num y) {
-    children.forEach((child) {
-      Actor hit = child.hit(x, y);
-      if (hit != null) return hit;
-    });
+  Actor hit(Actor actor) {
+    for (final child in children) {
+      Actor hitted = child.hit(actor);
+      if (hitted != null)
+        return hitted;
+    }
     return null;
   }
 }

@@ -8,6 +8,7 @@ class Triangle extends Actor {
   }
   
   void act(num delta) {
+    super.act(delta);
   }
   
   void draw(CanvasRenderingContext2D ctx) {
